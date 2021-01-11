@@ -13,7 +13,7 @@ export default class Login extends Component {
     handleChange = (e)=>{
         this.setState({[e.target.name]:e.target.value})
     }
-    onSubmit=()=>{
+    onLogin=()=>{
         const user = {
             email:this.state.email,
             password:this.state.password
@@ -44,7 +44,7 @@ export default class Login extends Component {
                     <input type="password" className="form-control" name="password" value={password} onChange={this.handleChange}></input>
                     {password_error?<span className="text-danger">{password_error}</span>:null}
                 </div>
-                <button className="btn btn-primary" onClick={this.onSubmit}>Login</button>
+                <button className="btn btn-primary" onClick={this.onLogin}>Login</button>
                 
             </div>
         )

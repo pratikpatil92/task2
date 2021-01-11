@@ -32,7 +32,7 @@ export default class ViewTask extends Component {
         // console.log(id)
         const newTask = this.state.item.filter((it,index) => {
             
-            return index !== id;
+            return index !== id-1;
           });
           this.setState({item:newTask});
     }
@@ -46,12 +46,12 @@ export default class ViewTask extends Component {
         }else{
         return (
             <div className="container">
-                <form className="form-inline mr-auto my-3">
+                <div className="form-inline mr-auto my-3">
                 <div className="form-group">
                     <input type="text" name="title" className="form-control" onChange={this.handleChange} value={title}></input>
                 </div>
                 <button className="btn btn-primary" onClick={this.onSubmit}>AddTask</button>
-                </form>
+                </div>
                 <table className="table table-bordered">
                 <thead>
                     <tr>
