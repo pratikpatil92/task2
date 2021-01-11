@@ -13,7 +13,7 @@ export default class User extends Component {
         console.log(user)
         return (
             <div className="container">
-                <p>Email: {user.email}</p>
+                <p>Username: {user.username}</p>
                 <p className="text-password" type="password">Password: {user.password}</p>
                 <Link className="btn btn-primary" to="/change-password">change password</Link>
                 <Link className="btn btn-primary ml-1" to="/Login" onClick={this.onLogout}>Logout</Link>

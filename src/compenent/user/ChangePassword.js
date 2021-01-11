@@ -5,7 +5,7 @@ export default class ChangePassword extends Component {
         super(props)
         const user = JSON.parse(localStorage.getItem('user'));
             this.state={
-                email:user.email,
+                username:user.username,
                 password:user.password
 
             }
@@ -16,7 +16,7 @@ export default class ChangePassword extends Component {
     }
     onUpdate=()=>{
         const user = {
-            email:this.state.email,
+            username:this.state.username,
             password:this.state.password
         }
         
@@ -24,12 +24,12 @@ export default class ChangePassword extends Component {
         this.props.history.push('/User');
     }
     render() {
-        const{email, password}=this.state
+        const{username, password}=this.state
         return (
             <div className="container">
                 <div className="form-group">
-                    <label>Email</label>
-                    <input type="text" className="form-control" name="email" value={email} onChange={this.handleChange}></input>
+                    <label>Username</label>
+                    <input type="text" className="form-control" name="username" value={username} onChange={this.handleChange}></input>
                 </div>
                 <div className="form-group">
                     <label>Password</label>
