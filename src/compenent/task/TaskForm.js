@@ -5,8 +5,6 @@ const TaskForm = (props) => {
   const { addTask } = useContext(taskContext);
   const [input, setInput] = useState("");
 
-  // console.log(todos);
-
   const onSubmit = (e) => {
     
       addTask(input);

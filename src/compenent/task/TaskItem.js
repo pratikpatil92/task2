@@ -14,8 +14,7 @@ const TaskItem = (props) => {
   const { task, deleteTask } = useContext(taskContext);
 
   const {
-    task: { id, title, complete },
-    task,
+    task: { id, title, completed },tasks
   } = props;
 
 
@@ -29,11 +28,7 @@ const TaskItem = (props) => {
         <ListItemIcon></ListItemIcon>
         <ListItemText primary={title} />
         <ListItemSecondaryAction>
-          <IconButton
-            edge="end"
-            aria-label="delete"
-            onClick={onEdit}
-          ></IconButton>
+         
           <IconButton edge="end" aria-label="delete" onClick={onDelete}>
             <Delete />
           </IconButton>

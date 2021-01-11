@@ -5,7 +5,6 @@ export const taskContext = createContext();
 
 export const TaskContextProvider = ({ children }) => {
   const [task, setTask] = useState([]);
-  const [editingItem, setEditingItem] = useState(null);
   // const [] = useState("");
   const url = "https://jsonplaceholder.typicode.com/todos";
   const fetchTask = () => {
@@ -21,7 +20,7 @@ export const TaskContextProvider = ({ children }) => {
       });
   };
 
-  const addTodo = (title) => {
+  const addTask = (title) => {
     console.log("addTask");
     const d = new Date();
     const newTask = {
@@ -37,7 +36,7 @@ export const TaskContextProvider = ({ children }) => {
     const newTask = task.filter((task) => {
       return task.id !== id;
     });
-    setTodos(newTask);
+    setTask(newTask);
   };
 
   const store = {
@@ -47,5 +46,5 @@ export const TaskContextProvider = ({ children }) => {
     deleteTask,
   };
 
-  return <todoContext.Provider value={store}>{children}</todoContext.Provider>;
+  return <taskContext.Provider value={store}>{children}</taskContext.Provider>;
 };
