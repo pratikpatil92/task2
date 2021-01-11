@@ -3,15 +3,15 @@ import { taskContext } from "./../context/taskContext";
 import TaskItem from "./TaskItem";
 
 const TaskList = (props) => {
-  const { task, fetchTask } = useContext(taskContext);
+  const { tasks, fetchTasks } = useContext(taskContext);
 
   useEffect(() => {
-    fetchTask();
+    fetchTasks();
   }, []);
 
   return (
     <div>
-      {task.map((task) => {
+      {tasks.map((task) => {
         return <TaskItem key={task.id} task={task} />;
       })}
     </div>

@@ -4,16 +4,16 @@ import React, { createContext, useState } from "react";
 export const taskContext = createContext();
 
 export const TaskContextProvider = ({ children }) => {
-  const [task, setTask] = useState([]);
+  const [tasks, setTasks] = useState([]);
   // const [] = useState("");
   const url = "https://jsonplaceholder.typicode.com/todos";
   const fetchTask = () => {
     fetch(url)
       .then((res) => res.json())
       .then((out) => {
-        const task = out;
-        setTask(task);
-        console.log("Checkout this JSON! ", task);
+        const tasks = out;
+        setTasks(tasks);
+        console.log("Checkout this JSON! ", tasks);
       })
       .catch((err) => {
         throw err;
@@ -22,25 +22,24 @@ export const TaskContextProvider = ({ children }) => {
 
   const addTask = (title) => {
     console.log("addTask");
-    const d = new Date();
     const newTask = {
-      id: task.length+1,
+      id: tasks.length+1,
       title: title,
       complete: false
     };
-    setTask([newTask, ...task]);
+    setTasks([newTask, ...tasks]);
   };
 
   const deleteTask = (id) => {
     console.log("deleteTask");
-    const newTask = task.filter((task) => {
+    const newTask = tasks.filter((task) => {
       return task.id !== id;
     });
-    setTask(newTask);
+    setTasks(newTask);
   };
 
   const store = {
-    task,
+    tasks,
     fetchTask,
     addTask,
     deleteTask,

@@ -11,10 +11,10 @@ import {
 import { Delete, Edit } from "@material-ui/icons";
 
 const TaskItem = (props) => {
-  const { task, deleteTask } = useContext(taskContext);
+  const {task, deleteTask } = useContext(taskContext);
 
   const {
-    task: { id, title, completed },tasks
+    tasks: { id, title, completed },tasks
   } = props;
 
 
